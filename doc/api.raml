@@ -1,0 +1,48 @@
+#%RAML 0.8
+
+title: production api
+
+/productions:
+  get:
+    description: get list for productions
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "name": "xxx",
+                  "price": 1.99
+                }
+              ]
+  post:
+    description: add new production
+    body:
+      application/json:
+        example: |
+          {
+            "name": "xxx",
+            "price": 1.99
+          }
+    responses:
+      201:
+      400:
+  /{production-id}:
+    get:
+      description: get one prodcution
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "name": "xxx",
+                  "price": 1.99
+                }
+        404:
+    put:
+      description: update production infomation
+      responses:
+        200:
+        400:
